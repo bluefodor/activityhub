@@ -1,0 +1,94 @@
+{
+  "expo": {
+    "name": "The Activity Hub",
+    "slug": "activeportland",
+    "version": "1.0.51",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/images/icon.png",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "08f6f8e6-0c4c-497a-988f-6b6b895984fe"
+      }
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.campbell3c2.activeportland",
+      "buildNumber": "187",
+      "entitlements": {
+        "aps-environment": "production"
+      },
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "The Activity Hub uses the camera to let you take a profile photo, helping other activity partners recognize you at meetups and creating a safer, more connected community experience.",
+        "NSPhotoLibraryUsageDescription": "The Activity Hub accesses your photo library to let you choose a profile photo, helping other activity partners recognize you at meetups and creating a safer, more connected community experience.",
+        "NSPhotoLibraryAddUsageDescription": "Save your new profile photo to your photo library.",
+        "NSLocationWhenInUseUsageDescription": "The Activity Hub uses your location to show distances to nearby activity partners, helping you find people close to you for convenient meetups and building local community connections."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "package": "com.campbell3c2.activeportland",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 123
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#FF8C42",
+          "defaultChannel": "default",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "ios": {
+            "backgroundColor": "#ffffff",
+            "image": "./assets/images/icon.png",
+            "resizeMode": "contain"
+          },
+          "android": {
+            "backgroundColor": "#ffffff",
+            "image": "./assets/images/icon.png",
+            "imageWidth": 150
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ],
+    "scheme": "activeportland",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

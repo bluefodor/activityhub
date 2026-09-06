@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - The Activity Hub</title>
+    <script>
+      (function () {
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+        var hasAuth =
+          hash.indexOf('access_token=') !== -1 ||
+          search.indexOf('code=') !== -1 ||
+          search.indexOf('token_hash=') !== -1 ||
+          search.indexOf('error=') !== -1 ||
+          hash.indexOf('error=') !== -1;
+        if (hasAuth && !window.location.pathname.endsWith('reset-password.html')) {
+          window.location.replace('reset-password.html' + search + hash);
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            background-color: #FFF9E6;
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #4B5563;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background-color: #FF8C42;
+            padding: 2rem 1.5rem;
+            color: white;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .header .date {
+            color: #FFCF56;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .shield-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Intro */
+        .intro {
+            padding: 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Accordion */
+        .accordion {
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .accordion:last-of-type {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s;
+        }
+
+        .accordion-header:hover {
+            background-color: #FFF9E6;
+        }
+
+        .accordion-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #FF8C42;
+        }
+
+        .accordion-icon {
+            width: 20px;
+            height: 20px;
+            color: #FF8C42;
+            transition: transform 0.2s;
+        }
+
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .accordion.active .accordion-content {
+            display: block;
+        }
+
+        .accordion-content h4 {
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .accordion-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content ul {
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-content .term {
+            font-weight: 600;
+            color: #1F2937;
+        }
+
+        .accordion-content .urgent {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .accordion-content .contact-box {
+            background-color: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .accordion-content a {
+            color: #FF8C42;
+            text-decoration: none;
+        }
+
+        .accordion-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #FFBF00;
+            padding: 1rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #5C4300;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .accordion-header h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <svg class="shield-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                    <h1>Privacy Policy</h1>
+                </div>
+                <p class="date">Last updated: November 30, 2025</p>
+            </div>
+
+            <!-- Intro -->
+            <div class="intro">
+                <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+                <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+            </div>
+
+            <!-- Accordion Sections -->
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Interpretation and Definitions</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <h4>Interpretation</h4>
+                    <p>The words whose initial letters are capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>For the purposes of this Privacy Policy:</p>
+                    <ul>
+                        <li><span class="term">Account</span> means a unique account created for You to access our Service or parts of our Service.</li>
+                        <li><span class="term">Application</span> refers to The Activity Hub, the software program provided by the Company.</li>
+                        <li><span class="term">Company</span> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to The Activity Hub.</li>
+                        <li><span class="term">Country</span> refers to: Maine, United States.</li>
+                        <li><span class="term">Device</span> means any device that can access the Service such as a computer, a cell phone or a digital tablet.</li>
+                        <li><span class="term">Personal Data</span> is any information that relates to an identified or identifiable individual.</li>
+                        <li><span class="term">Service</span> refers to the Application.</li>
+                        <li><span class="term">Service Provider</span> means any natural or legal person who processes the data on behalf of the Company.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Collecting and Using Your Personal Data</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <h4>Types of Data Collected</h4>
+                    <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You, including but not limited to:</p>
+                    <ul>
+                        <li>Email address</li>
+                        <li>First name and last name</li>
+                        <li>Usage Data</li>
+                    </ul>
+                    
+                    <h4>Usage Data</h4>
+                    <p>Usage Data is collected automatically when using the Service. This may include information such as Your Device's Internet Protocol address, browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, and other diagnostic data.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Use of Your Personal Data</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>The Company may use Personal Data for the following purposes:</p>
+                    <ul>
+                        <li><span class="term">To provide and maintain our Service</span>, including to monitor the usage of our Service.</li>
+                        <li><span class="term">To manage Your Account</span>: to manage Your registration as a user of the Service.</li>
+                        <li><span class="term">To contact You</span>: by email or other equivalent forms of electronic communication regarding updates or informative communications related to the functionalities.</li>
+                        <li><span class="term">To manage Your requests</span>: To attend and manage Your requests to Us.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Retention of Your Personal Data</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Security of Your Personal Data</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Children's Privacy</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us.</p>
+                </div>
+            </div>
+
+            <!-- Child Safety Standards Section -->
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Child Safety Standards</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Last updated:</strong> December 17, 2025</p>
+                    <p>The Activity Hub is committed to protecting children and preventing child sexual abuse and exploitation (CSAE) on our platform. This document outlines our standards, policies, and procedures for maintaining a safe environment for all users.</p>
+
+                    <h4>Zero Tolerance Policy</h4>
+                    <p>The Activity Hub has a <strong>zero tolerance policy</strong> for child sexual abuse material (CSAM), child sexual exploitation, or any content or behavior that endangers minors. Any violation of this policy will result in:</p>
+                    <ul>
+                        <li>Immediate account suspension or termination</li>
+                        <li>Permanent ban from the platform</li>
+                        <li>Reporting to appropriate law enforcement authorities</li>
+                        <li>Cooperation with legal investigations</li>
+                    </ul>
+
+                    <h4>Age Restrictions</h4>
+                    <p>Our Service is intended for users who are <strong>18 years of age or older</strong>. We do not knowingly collect personal information from anyone under the age of 18. If we become aware that a user is under 18, we will immediately:</p>
+                    <ol>
+                        <li>Suspend or terminate the account</li>
+                        <li>Delete all associated data in compliance with applicable laws</li>
+                        <li>Report to appropriate authorities if required by law</li>
+                    </ol>
+
+                    <h4>Reporting Mechanisms</h4>
+                    <p><strong>In-App Reporting:</strong> Users can report child safety concerns directly within The Activity Hub application by navigating to the user's profile, selecting "Report User" option, choosing "Child Safety Concern" as the report category, and submitting the report.</p>
+                    
+                    <div class="urgent">
+                        <p><strong>External Reporting:</strong> If you encounter content or behavior that may involve child sexual abuse material or exploitation, please report it immediately:</p>
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:activityhubsercive@gmail.com">activityhubsercive@gmail.com</a></li>
+                            <li><strong>Subject Line:</strong> "URGENT: Child Safety Report"</li>
+                            <li><strong>Include:</strong> Screenshots, user information, and detailed description</li>
+                        </ul>
+                    </div>
+
+                    <h4>Response and Investigation</h4>
+                    <p>All child safety reports are treated with the highest priority:</p>
+                    <ul>
+                        <li><strong>Review Timeline:</strong> Reports are reviewed within <strong>24 hours</strong> of submission</li>
+                        <li><strong>Immediate Action:</strong> Accounts suspected of CSAM or child exploitation are immediately suspended pending investigation</li>
+                        <li><strong>Investigation:</strong> All reports are thoroughly investigated by our safety team</li>
+                        <li><strong>Removal:</strong> Confirmed violations result in immediate and permanent removal of content and user access</li>
+                    </ul>
+
+                    <h4>Compliance with Laws</h4>
+                    <p>The Activity Hub complies with all relevant child safety laws and regulations, including but not limited to:</p>
+                    <ul>
+                        <li><strong>United States:</strong> Federal laws including the PROTECT Act, FOSTA-SESTA, and state-specific child protection laws</li>
+                        <li><strong>International:</strong> We comply with applicable international laws and regulations regarding child protection</li>
+                        <li><strong>Reporting Requirements:</strong> We report suspected child sexual abuse material to:
+                            <ul>
+                                <li>National Center for Missing & Exploited Children (NCMEC) in the United States</li>
+                                <li>Appropriate regional and national law enforcement authorities</li>
+                                <li>Relevant child protection agencies</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Content Moderation</h4>
+                    <p>We employ multiple layers of content moderation:</p>
+                    <ol>
+                        <li><strong>Automated Systems:</strong> Technology-based detection of potentially harmful content</li>
+                        <li><strong>User Reporting:</strong> Community-driven reporting system</li>
+                        <li><strong>Manual Review:</strong> Human review of all reported content and accounts</li>
+                        <li><strong>Proactive Monitoring:</strong> Regular monitoring of platform activity</li>
+                    </ol>
+
+                    <h4>User Education and Safety Guidelines</h4>
+                    <p>We provide safety guidelines to all users:</p>
+                    <ul>
+                        <li>Meet in public places for first-time meetups</li>
+                        <li>Report any inappropriate behavior immediately</li>
+                        <li>Trust your instincts and prioritize your safety</li>
+                        <li>Be respectful and kind to all members</li>
+                        <li>Never share personal information with strangers</li>
+                    </ul>
+
+                    <h4>Data Retention and Deletion</h4>
+                    <p>In compliance with child safety laws:</p>
+                    <ul>
+                        <li>We retain data necessary for legal investigations and reporting</li>
+                        <li>Data related to child safety violations is preserved for law enforcement purposes</li>
+                        <li>We comply with all legal requirements for data retention and deletion</li>
+                        <li>Users can request account deletion, subject to legal obligations</li>
+                    </ul>
+
+                    <h4>Cooperation with Authorities</h4>
+                    <p>The Activity Hub fully cooperates with law enforcement investigations, child protection agencies, legal proceedings related to child safety, and international child protection organizations. We provide all necessary information and evidence to assist in investigations while respecting user privacy and legal requirements.</p>
+
+                    <div class="contact-box">
+                        <h4>Contact for Child Safety Concerns</h4>
+                        <p>For immediate child safety concerns:</p>
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:activityhubsercive@gmail.com">activityhubsercive@gmail.com</a></li>
+                            <li><strong>Subject:</strong> "URGENT: Child Safety Report"</li>
+                            <li><strong>Response Time:</strong> Within 24 hours</li>
+                        </ul>
+                        <p>For general safety questions or policy inquiries, please contact us through the app's support features.</p>
+                    </div>
+
+                    <h4>Commitment</h4>
+                    <p>The Activity Hub is committed to maintaining a safe platform for all users. We continuously work to improve our safety measures, reporting mechanisms, and response procedures. Protecting children is our highest priority, and we will take all necessary actions to prevent and respond to child safety violations.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Changes to this Privacy Policy</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h3>Contact Us</h3>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="accordion-content">
+                    <p>If you have any questions about this Privacy Policy, You can contact us by visiting the contact page in our Application.</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2025 The Activity Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(button) {
+            const accordion = button.parentElement;
+            accordion.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
+

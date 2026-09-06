@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "963577661810",
+    "project_id": "the-activity-hub-2e04f",
+    "storage_bucket": "the-activity-hub-2e04f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963577661810:android:5959eb920d9b30d00875eb",
+        "android_client_info": {
+          "package_name": "com.campbell3c2.activeportland"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTxpJXyV2koZQyOPXxBzZPeZD16JXcQxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
