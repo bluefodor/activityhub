@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open The Activity Hub</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 20px;
+      color: #222;
+    }
+    h1 {
+      font-size: clamp(48px, 11vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 16px;
+    }
+    .the { color: #F5B400; }
+    .activity { color: #FF6A00; }
+    .hub { color: #F5B400; }
+    p { color: #555; margin: 0 0 24px; line-height: 1.45; }
+    .btn {
+      display: inline-block;
+      background: #FF8C42;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 18px;
+    }
+    .fallback {
+      margin-top: 28px;
+      font-size: 14px;
+    }
+    .fallback a { color: #FF8C42; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>
+      <span class="the">The</span>
+      <span class="activity"> Activity</span>
+      <span class="hub"> Hub</span>
+    </h1>
+    <p id="msg">Tap to open the app.</p>
+    <p>
+      <a class="btn" id="open" href="activeportland://">Open the app</a>
+    </p>
+    <p class="fallback">
+      Need to install it?
+      <a href="https://apps.apple.com/app/id6749449497">App Store</a>
+      ·
+      <a href="https://play.google.com/store/apps/details?id=com.campbell3c2.activeportland">Google Play</a>
+    </p>
+  </main>
+  <script>
+    (function () {
+      var appUrl = 'activeportland://';
+      var ua = navigator.userAgent || '';
+      var isMobile = /iPad|iPhone|iPod|Android/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      document.getElementById('open').setAttribute('href', appUrl);
+      if (isMobile) {
+        window.location.href = appUrl;
+      } else {
+        document.getElementById('msg').textContent = 'Open this link on your phone, or tap below if the app is installed.';
+      }
+    })();
+  </script>
+</body>
+</html>
