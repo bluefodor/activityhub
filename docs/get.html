@@ -42,6 +42,13 @@
       font-size: 14px;
     }
     .fallback a { color: #FF8C42; }
+    .hint {
+      display: none;
+      max-width: 320px;
+      margin: 0 auto 20px;
+      font-size: 14px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -52,8 +59,9 @@
       <span class="hub"> Hub</span>
     </h1>
     <p id="msg">Tap to open the app.</p>
+    <p id="hint" class="hint">If nothing happens, tap the menu and choose Open in Safari or Chrome, then tap the button again.</p>
     <p>
-      <a class="btn" id="open" href="activeportland://">Open the app</a>
+      <a class="btn" id="open" href="activeportland://forum">Open the app</a>
     </p>
     <p class="fallback">
       Need to install it?
@@ -64,15 +72,17 @@
   </main>
   <script>
     (function () {
-      var appUrl = 'activeportland://';
       var ua = navigator.userAgent || '';
-      var isMobile = /iPad|iPhone|iPod|Android/i.test(ua) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      document.getElementById('open').setAttribute('href', appUrl);
-      if (isMobile) {
-        window.location.href = appUrl;
-      } else {
-        document.getElementById('msg').textContent = 'Open this link on your phone, or tap below if the app is installed.';
+      var isAndroid = /Android/i.test(ua);
+      var iosUrl = 'activeportland://forum';
+      var androidUrl = 'intent://forum#Intent;scheme=activeportland;package=com.campbell3c2.activeportland;end';
+      var open = document.getElementById('open');
+      open.setAttribute('href', isAndroid ? androidUrl : iosUrl);
+
+      var inApp = /FBAN|FBAV|Instagram|Line\/|Gmail|Yahoo|wv\)/.test(ua) ||
+        (/iPhone|iPad/.test(ua) && !/Safari/.test(ua));
+      if (inApp) {
+        document.getElementById('hint').style.display = 'block';
       }
     })();
   </script>
