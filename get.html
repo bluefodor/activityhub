@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get The Activity Hub</title>
+  <meta http-equiv="refresh" content="8;url=https://activeportland.com" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 20px;
+      color: #222;
+    }
+    h1 { font-size: 26px; margin: 0 0 12px; }
+    .the { color: #F5B400; }
+    .activity { color: #FF6A00; }
+    .hub { color: #F5B400; }
+    p { color: #555; margin: 0 0 24px; }
+    a {
+      display: inline-block;
+      background: #FF8C42;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      margin: 6px;
+    }
+    a.secondary { background: #333; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>
+      <span class="the">The</span>
+      <span class="activity"> Activity</span>
+      <span class="hub"> Hub</span>
+    </h1>
+    <p id="msg">Opening the right store for your phone…</p>
+    <p>
+      <a id="ios" href="https://apps.apple.com/app/id6749449497">App Store</a>
+      <a id="play" class="secondary" href="https://play.google.com/store/apps/details?id=com.campbell3c2.activeportland">Google Play</a>
+    </p>
+  </main>
+  <script>
+    (function () {
+      var ios = 'https://apps.apple.com/app/id6749449497';
+      var play = 'https://play.google.com/store/apps/details?id=com.campbell3c2.activeportland';
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/i.test(ua);
+      if (isIOS) {
+        window.location.replace(ios);
+      } else if (isAndroid) {
+        window.location.replace(play);
+      } else {
+        document.getElementById('msg').textContent = 'Get the app:';
+      }
+    })();
+  </script>
+</body>
+</html>
