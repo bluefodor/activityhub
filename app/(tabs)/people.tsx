@@ -67,7 +67,7 @@ export default function PeopleScreen() {
         return '#4CAF50';
       case 'Intermediate':
         return '#FFCF56';
-      case 'Advanced':
+      case 'Local Legend':
         return '#FF8C42';
       default:
         return '#999';

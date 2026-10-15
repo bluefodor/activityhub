@@ -377,7 +377,7 @@ export default function ProfileScreen() {
   const [showSystemSettingsPrompt, setShowSystemSettingsPrompt] = useState(false);
   const [systemToggleTarget, setSystemToggleTarget] = useState<'on' | 'off' | null>(null);
   const hasActivities = userSkills.some((userSkill) => userSkill.activities);
-  const [editingSkill, setEditingSkill] = useState<{ activityId: string; current: 'Beginner' | 'Intermediate' | 'Advanced' } | null>(null);
+  const [editingSkill, setEditingSkill] = useState<{ activityId: string; current: 'Beginner' | 'Intermediate' | 'Local Legend' } | null>(null);
   const [planStats, setPlanStats] = useState<{ created: number; joined: number; lastCreatedAt: string | null } | null>(null);
   const [planCreatedDates, setPlanCreatedDates] = useState<string[]>([]);
   const [showCommunityBuilderExpired, setShowCommunityBuilderExpired] = useState(false);
@@ -846,7 +846,7 @@ export default function ProfileScreen() {
       [
         { text: 'Beginner', onPress: () => updateSkillLevel(activityObj.id, 'Beginner') },
         { text: 'Intermediate', onPress: () => updateSkillLevel(activityObj.id, 'Intermediate') },
-        { text: 'Advanced', onPress: () => updateSkillLevel(activityObj.id, 'Advanced') },
+        { text: 'Local Legend', onPress: () => updateSkillLevel(activityObj.id, 'Local Legend') },
         { text: 'Cancel', style: 'cancel' },
       ]
     );
@@ -879,7 +879,7 @@ export default function ProfileScreen() {
         return '#4CAF50';
       case 'Intermediate':
         return '#FFBF00';
-      case 'Advanced':
+      case 'Local Legend':
         return '#FF8C42';
       default:
         return '#999';
@@ -2262,7 +2262,7 @@ export default function ProfileScreen() {
             <View style={styles.skillEditCard}>
               <Text style={styles.skillEditTitle}>Adjust Skill Level</Text>
               <Text style={styles.skillEditSubtitle}>Tap a level to update</Text>
-              {(['Beginner', 'Intermediate', 'Advanced'] as const).map((lvl) => {
+              {(['Beginner', 'Intermediate', 'Local Legend'] as const).map((lvl) => {
                 const color = lvl === 'Beginner' ? '#4CAF50' : lvl === 'Intermediate' ? '#FFCF56' : '#FF8C42';
                 const isSelected = editingSkill?.current === lvl;
                 return (

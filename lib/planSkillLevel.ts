@@ -1,4 +1,4 @@
-export const PLAN_SKILL_LEVELS = ['Beginner', 'Intermediate', 'Advanced'] as const;
+export const PLAN_SKILL_LEVELS = ['Beginner', 'Intermediate', 'Local Legend'] as const;
 
 export type PlanSkillLevel = (typeof PLAN_SKILL_LEVELS)[number];
 
@@ -23,7 +23,7 @@ export function getPlanSkillLevelColor(level: string | null | undefined): string
       return '#4CAF50';
     case 'Intermediate':
       return '#FFCF56';
-    case 'Advanced':
+    case 'Local Legend':
       return '#FF8C42';
     default:
       return '#999';

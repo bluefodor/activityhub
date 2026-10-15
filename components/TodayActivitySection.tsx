@@ -55,7 +55,7 @@ function getSkillColor(skillLevel: string): string {
   switch (n) {
     case 'Beginner': return '#4CAF50';
     case 'Intermediate': return '#FFCF56';
-    case 'Advanced': return '#FF8C42';
+    case 'Local Legend': return '#FF8C42';
     default: return '#999';
   }
 }

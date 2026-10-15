@@ -45,7 +45,7 @@ BEGIN
     id,
     CASE 
       WHEN name = 'Tennis' THEN 'Intermediate'
-      WHEN name = 'Hiking' THEN 'Advanced'
+      WHEN name = 'Hiking' THEN 'Local Legend'
       WHEN name = 'Running' THEN 'Intermediate'
       WHEN name = 'Board Games' THEN 'Beginner'
       ELSE 'Intermediate'

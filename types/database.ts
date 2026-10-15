@@ -24,7 +24,7 @@ export interface UserActivitySkill {
   id: string
   user_id: string
   activity_id: string
-  skill_level: 'Beginner' | 'Intermediate' | 'Advanced'
+  skill_level: 'Beginner' | 'Intermediate' | 'Local Legend'
   ready_today?: boolean
   ready_today_date?: string | null
   created_at?: string
