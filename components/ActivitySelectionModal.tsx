@@ -13,11 +13,11 @@ import { BlurView } from 'expo-blur';
 import { useActivities } from '@/hooks/useActivities';
 import { useProfile } from '@/hooks/useProfile';
 
-const skillLevels = ['Beginner', 'Intermediate', 'Advanced'];
+const skillLevels = ['Beginner', 'Intermediate', 'Local Legend'];
 
 export type ActivitySelectionResult = {
   activityId: string;
-  skillLevel: 'Beginner' | 'Intermediate' | 'Advanced';
+  skillLevel: 'Beginner' | 'Intermediate' | 'Local Legend';
   /** Present when picking from catalog — lets Forum/Plans sync global activity immediately */
   name?: string;
   emoji?: string;
@@ -51,7 +51,7 @@ export function ActivitySelectionModal({
         return '#4CAF50';
       case 'Intermediate':
         return '#FFCF56';
-      case 'Advanced':
+      case 'Local Legend':
         return '#FF8C42';
       default:
         return '#999';
@@ -85,7 +85,7 @@ export function ActivitySelectionModal({
       // Build the selection object (name/emoji keep Forum/Plans store in sync when adding from carousel)
       const selection: ActivitySelectionResult = {
         activityId: selectedActivity.id,
-        skillLevel: selectedSkillLevel as 'Beginner' | 'Intermediate' | 'Advanced',
+        skillLevel: selectedSkillLevel as 'Beginner' | 'Intermediate' | 'Local Legend',
         name: selectedActivity.name,
         emoji: selectedActivity.emoji,
       };

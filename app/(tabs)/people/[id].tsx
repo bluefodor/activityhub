@@ -670,7 +670,7 @@ function getSkillBadgeStyle(skillLevel: string) {
       return { backgroundColor: '#4CAF50' };
     case 'Intermediate':
       return { backgroundColor: '#FFCF56' };
-    case 'Advanced':
+    case 'Local Legend':
       return { backgroundColor: '#FF8C42' };
     default:
       return { backgroundColor: '#999' };

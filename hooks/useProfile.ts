@@ -30,7 +30,7 @@ export function useProfile() {
     void ensureLoaded(user.id)
   }, [user, ensureLoaded, resetProfileStore])
 
-  const updateSkillLevel = async (activityId: string, skillLevel: 'Beginner' | 'Intermediate' | 'Advanced', manualUserId?: string) => {
+  const updateSkillLevel = async (activityId: string, skillLevel: 'Beginner' | 'Intermediate' | 'Local Legend', manualUserId?: string) => {
     const targetUserId = manualUserId || user?.id;
 
     if (!targetUserId) {

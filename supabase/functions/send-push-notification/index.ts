@@ -625,7 +625,7 @@ serve(async (req) => {
               to: token,
               sound: "default",
               title: `${activityEmoji} ${activityName}`,
-              body: `${userName} is ready today — join them!`,
+              body: `${userName} is ready this week — join them!`,
               channelId: "default",
               priority: "high",
               data: {
